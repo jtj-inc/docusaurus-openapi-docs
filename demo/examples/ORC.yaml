@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: Orbital Refuse Collector (ORC) API
+  description: The ORC API is a fictional API that provides resources to retrieve information about satellites and schedule their decommission.
+  version: 0.8.0
+externalDocs:
+  description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
+  url: https://jamestasse.tech
+servers:
+  - url: https://api.orc.com/v1
+    description: Production API server
+  - url: https://api.orc.com
+    description: Test API server
+paths:
+  /satellites:
+    get:
+      summary: Gets a list of satellites
+      description: Returns a list of all satellites
+      parameters:
+        - name: "satellitesToRetrieve"
+          in: query
+          description: Number of satellites to retrieve
+          required: true
+          schema:
+            type: integer
+            format: number
+      responses:
+        "200":
+          description: A list of satellites
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Satellite"
+              example:
+                - id: 9
+                  name: "Asteroid Incinerator"
+                  owner: Laser Industries
+                  status: 1
+                - id: 10
+                  name: "CleaningBot 1009"
+                  owner: CL4PTRAP
+                  status: 0
+
+  /satellites/{id}:
+    get:
+      summary: Gets a satellite by ID
+      description: Gets a satellite with the specified ID
+      operationId: getSatelliteById
+      parameters:
+        - name: id
+          in: path
+          description: Satellite ID
+          required: True
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Satellite information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Satellite"
+              example:
+                id: 9
+                name: "Asteroid Incinerator"
+                owner: Laser Industries
+                status: 1
+
+    put:
+      summary: Updates a satellite
+      description: Updates a satellite with the specified ID
+      operationId: updateSatelliteById
+      parameters:
+        - name: id
+          in: path
+          description: Satellite ID
+          required: True
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        description: Updated satellite information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Satellite"
+      responses:
+        "200":
+          description: Satellite information updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Satellite"
+              example:
+                id: 9
+                name: "Asteroid Slingshotter"
+                owner: Laser Industries
+                status: 1
+
+    delete:
+      summary: Deletes a satellite
+      description: Deletes a satellite with the specified ID
+      operationId: deleteSatelliteById
+      parameters:
+        - name: id
+          in: path
+          description: Satellite ID
+          required: True
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: Satellite deleted successfully
+
+  /satellites/scheduleDecommission:
+    post:
+      summary: Schedules decommission for the given satellite
+      description: Schedules a decommission for the satellite with the specified ID
+      operationId: scheduleDecommissionForSatellite
+      requestBody:
+        description: Time at which the satellite should be decommissioned
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DecommissionSchedule"
+      responses:
+        "200":
+          description: Satellite decommission scheduled successfully
+        "400":
+          description: Bad Request
+        "500":
+          description: "A problem occurred while attempting to schedule the satellite decommission."
+
+components:
+  schemas:
+    Satellite:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        owner:
+          type: string
+        status:
+          type: integer
+          format: int64
+      required:
+        - id
+        - name
+        - owner
+        - status
+    DecommissionSchedule:
+      type: object
+      properties:
+        satelliteId:
+          type: integer
+          format: int64
+        decommissionAt:
+          type: string
+      required:
+        - id
+        - decommissionAt

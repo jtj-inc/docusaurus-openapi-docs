@@ -29,11 +29,11 @@ Key Features:
 
 ## Compatibility Matrix
 
-| Docusaurus OpenAPI Docs | Docusaurus      |
-| ----------------------- | --------------- |
-| 3.0.0-beta.x (beta)     | `3.0.1 - 3.1.1` |
-| 2.0.x (current)         | `2.4.1 - 2.4.3` |
-| 1.7.3 (legacy)          | `2.0.1 - 2.2.0` |
+| yyyy                | Docusaurus      |
+| ------------------- | --------------- |
+| 3.0.0-beta.x (beta) | `3.0.1 - 3.1.1` |
+| 2.0.x (current)     | `2.4.1 - 2.4.3` |
+| 1.7.3 (legacy)      | `2.0.1 - 2.2.0` |
 
 ## Bootstrapping from Template (new Docusaurus site)
 

@@ -2,18 +2,21 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const { DOCUSAURUS_VERSION } = require("@docusaurus/utils");
+const { DOCUSAURUS_OPENAPI_DOCS_URL } =
+  "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Docusaurus OpenAPI Docs",
-  tagline: "OpenAPI plugin for generating API reference docs in Docusaurus v2",
-  url: "https://docusaurus-openapi.tryingpan.dev",
+  title: "Orbital Refuse Collector (ORC) API",
+  tagline:
+    "See what you can do with satellites. Thanks to the folks behind the Docusaurus API plugin at @{DOCUSAURUS_OPENAPI_DOCS_URL}",
+  url: "https://jamestasse.tech",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "PaloAltoNetworks",
-  projectName: "docusaurus-openapi-docs",
+  organizationName: "ORC",
+  projectName: "orc-api-docs",
 
   presets: [
     [
@@ -23,8 +26,6 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs/tree/main/demo",
           docLayoutComponent: "@theme/DocPage",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
@@ -49,39 +50,12 @@ const config = {
         },
       },
       navbar: {
-        title: "OpenAPI Docs",
+        title: "Orbital Solutions, Inc.",
         logo: {
           alt: "Keytar",
-          src: "img/docusaurus-openapi-docs-logo.svg",
+          src: "img/Satellite-Reentry-Cropped.png",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Docs",
-          },
-          {
-            type: "dropdown",
-            label: "Demos",
-            position: "left",
-            items: [
-              {
-                label: "API Zoo",
-                to: "/category/petstore-api",
-              },
-              {
-                label: "Petstore (versioned)",
-                to: "/category/petstore-versioned-api",
-              },
-            ],
-          },
-          {
-            href: "https://medium.com/palo-alto-networks-developer-blog",
-            position: "right",
-            className: "header-medium-link",
-            "aria-label": "Palo Alto Networks Developer Blog",
-          },
           {
             href: "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs",
             position: "right",
@@ -194,11 +168,6 @@ const config = {
         appId: "J0EABTYI1A",
         indexName: "docusaurus-openapi",
       },
-      announcementBar: {
-        id: "announcementBar_1",
-        content:
-          "🥳 First v2.0.0 stable release! Currently only compatible with Docusaurus v2.4.1 -> v2.4.3",
-      },
     }),
 
   plugins: [
@@ -208,61 +177,15 @@ const config = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          petstore_versioned: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore_versioned", // No trailing slash
+          ORC: {
+            specPath: "examples/ORC.yaml",
+            outputDir: "docs", // No trailing slash
             sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
+              categoryLinkSource: "auto",
             },
             version: "2.0.0", // Current version
             label: "v2.0.0", // Current version label
-            baseUrl: "/petstore_versioned/swagger-petstore-yaml", // Leading slash is important
-            versions: {
-              "1.0.0": {
-                specPath: "examples/petstore-1.0.0.yaml",
-                outputDir: "docs/petstore_versioned/1.0.0", // No trailing slash
-                label: "v1.0.0",
-                baseUrl: "/petstore_versioned/1.0.0/swagger-petstore-yaml", // Leading slash is important
-              },
-            },
-          },
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            proxy: "https://cors.pan.dev",
-            outputDir: "docs/petstore",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-            template: "api.mustache", // Customize API MDX with mustache template
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-openapi-docs/main/demo/examples/petstore.yaml",
-            hideSendButton: false,
-            showSchemas: true,
-            disableCompression: true,
-          },
-          cos: {
-            specPath: "examples/openapi-cos.json",
-            outputDir: "docs/cos",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-          burgers: {
-            specPath: "examples/food/burgers/openapi.yaml",
-            outputDir: "docs/food/burgers",
-          },
-          yogurt: {
-            specPath: "examples/food/yogurtstore/openapi.yaml",
-            outputDir: "docs/food/yogurtstore",
-          },
-          restaurant: {
-            specPath: "examples/food/restaurant/openapi.yaml",
-            outputDir: "docs/restaurant",
-            sidebarOptions: {
-              groupPathsBy: "tagGroup",
-            },
+            baseUrl: "/", // Leading slash is important
           },
         },
       },
