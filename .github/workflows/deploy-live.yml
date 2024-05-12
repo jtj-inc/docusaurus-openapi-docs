@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: github.repository_owner	== 'PaloAltoNetworks'
+    if: github.repository_owner	== 'jtasse'
     name: Build
     runs-on: ubuntu-latest
 
@@ -55,15 +55,3 @@ jobs:
 
       - name: Unzip build artifact
         run: unzip build.zip
-
-      - name: Deploy to Firebase
-        id: deploy_live
-        uses: FirebaseExtended/action-hosting-deploy@276388dd6c2cde23455b30293105cc866c22282d # v0.6-alpha
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PANDEV }}"
-          projectId: pandev
-          channelId: live
-          target: docusaurus-openapi.tryingpan.dev
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
