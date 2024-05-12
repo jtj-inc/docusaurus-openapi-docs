@@ -17,6 +17,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "ORC",
   projectName: "orc-api-docs",
+  trailingSlash: false,
 
   presets: [
     [
