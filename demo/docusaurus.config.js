@@ -15,7 +15,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "jtj-inc",
   projectName: "docusaurus-openapi-docs",
-  deploymentBranch: "main",
+  deploymentBranch: "gh-pages",
   trailingSlash: true,
 
   presets: [
