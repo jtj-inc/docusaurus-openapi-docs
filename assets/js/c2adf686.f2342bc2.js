@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdemo=self.webpackChunkdemo||[]).push([[273],{62741:e=>{e.exports=JSON.parse('{"title":"ORC 2","slug":".","permalink":"/docusaurus-openapi-docs/.","navigation":{"next":{"title":"Welcome","permalink":"/docusaurus-openapi-docs/"}}}')}}]);
