@@ -15,6 +15,7 @@ const config = {
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
+  organizationName: "Orbital Solutions",
   projectName: "docusaurus-openapi-docs",
   deploymentBranch: "main",
   trailingSlash: true,
