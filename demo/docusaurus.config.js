@@ -17,6 +17,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "ORC",
   projectName: "jtasse.github.io",
+  deploymentBranch: "main",
   trailingSlash: false,
 
   presets: [
