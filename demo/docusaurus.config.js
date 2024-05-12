@@ -3,7 +3,7 @@
 
 const { DOCUSAURUS_VERSION } = require("@docusaurus/utils");
 const { DOCUSAURUS_OPENAPI_DOCS_URL } =
-  "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs";
+  "https://github.com/jtasse/docusaurus-openapi-docs";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -59,7 +59,7 @@ const config = {
         },
         items: [
           {
-            href: "https://github.com/PaloAltoNetworks/docusaurus-openapi-docs",
+            href: "https://github.com/jtasse/docusaurus-openapi-docs",
             position: "right",
             className: "header-github-link",
             "aria-label": "GitHub repository",
