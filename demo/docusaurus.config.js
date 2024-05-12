@@ -10,13 +10,13 @@ const config = {
   title: "Orbital Refuse Collector (ORC) API",
   tagline:
     "See what you can do with satellites. Thanks to the folks behind the Docusaurus API plugin at @{DOCUSAURUS_OPENAPI_DOCS_URL}",
-  url: "https://jamestasse.tech",
+  url: "https://jtasse.github.io",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "ORC",
-  projectName: "orc-api-docs",
+  projectName: "jtasse.github.io",
   trailingSlash: false,
 
   presets: [
