@@ -1,6 +1,5 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
 const { DOCUSAURUS_VERSION } = require("@docusaurus/utils");
 const { DOCUSAURUS_OPENAPI_DOCS_URL } =
   "https://github.com/jtasse/docusaurus-openapi-docs";
@@ -8,8 +7,7 @@ const { DOCUSAURUS_OPENAPI_DOCS_URL } =
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Orbital Refuse Collector (ORC) API",
-  tagline:
-    "See what you can do with satellites. Thanks to the folks behind the Docusaurus API plugin at @{DOCUSAURUS_OPENAPI_DOCS_URL}",
+  tagline: `See what you can do with satellites. Thanks to the folks behind the Docusaurus API plugin at ${DOCUSAURUS_OPENAPI_DOCS_URL}`,
   url: "https://jtasse.github.io",
   baseUrl: "docusaurus-openapi-docs/",
   onBrokenLinks: "warn",
