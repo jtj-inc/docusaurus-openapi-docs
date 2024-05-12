@@ -11,14 +11,14 @@ const config = {
   tagline:
     "See what you can do with satellites. Thanks to the folks behind the Docusaurus API plugin at @{DOCUSAURUS_OPENAPI_DOCS_URL}",
   url: "https://jtasse.github.io",
-  baseUrl: "/",
+  baseUrl: "docusaurus-openapi-docs/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "ORC",
-  projectName: "jtasse.github.io",
+  organizationName: "Orbital Solutions, Inc.",
+  projectName: "docusaurus-openapi-docs",
   deploymentBranch: "main",
-  trailingSlash: false,
+  trailingSlash: true,
 
   presets: [
     [
