@@ -7,15 +7,15 @@ externalDocs:
   description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
   url: https://jamestasse.tech
 servers:
-  - url: https://api.orc.com/v1
+  - url: https://202eacf0-0181-4395-bad7-51c5e57d0c2a.mock.pstmn.io
     description: Production API server
-  - url: https://api.orc.com
-    description: Test API server
+
 paths:
   /satellites:
     get:
       summary: Gets a list of satellites
       description: Returns a list of all satellites
+      operationId: getSatellites
       parameters:
         - name: "satellitesToRetrieve"
           in: query
@@ -25,7 +25,7 @@ paths:
             type: integer
             format: number
       responses:
-        "200":
+        200:
           description: A list of satellites
           content:
             application/json:
@@ -40,6 +40,38 @@ paths:
                   name: "CleaningBot 1009"
                   owner: CL4PTRAP
                   status: 0
+        400:
+          description: Failed to retrieve satellite list
+        500:
+          description: Failed to retrieve satellite list
+
+    put:
+      summary: Updates a satellite
+      description: Updates a satellite with the specified ID
+      operationId: updateSatellite
+      requestBody:
+        description: Updated satellite information
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Satellite"
+      responses:
+        200:
+          description: Satellite information updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Satellite"
+              example:
+                id: 9
+                name: "Asteroid Slingshotter"
+                owner: Laser Industries
+                status: 1
+        400:
+          description: Failed to update satellite information
+        500:
+          description: Failed to update satellite information
 
   /satellites/{id}:
     get:
@@ -55,49 +87,23 @@ paths:
             type: integer
             format: int64
       responses:
-        "200":
+        200:
           description: Satellite information retrieved successfully
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Satellite"
               example:
-                id: 9
-                name: "Asteroid Incinerator"
-                owner: Laser Industries
-                status: 1
-
-    put:
-      summary: Updates a satellite
-      description: Updates a satellite with the specified ID
-      operationId: updateSatelliteById
-      parameters:
-        - name: id
-          in: path
-          description: Satellite ID
-          required: True
-          schema:
-            type: integer
-            format: int64
-      requestBody:
-        description: Updated satellite information
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Satellite"
-      responses:
-        "200":
-          description: Satellite information updated successfully
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Satellite"
-              example:
-                id: 9
-                name: "Asteroid Slingshotter"
-                owner: Laser Industries
-                status: 1
+                - id: 8
+                  name: "Asteroid Eradicator"
+                  owner: Laser Industries
+                  status: 1
+        400:
+          description: Failed to get satellite information
+        404:
+          description: Specified satellite not found
+        500:
+          description: Failed to get satellite information
 
     delete:
       summary: Deletes a satellite
@@ -112,8 +118,14 @@ paths:
             type: integer
             format: int64
       responses:
-        "200":
+        200:
           description: Satellite deleted successfully
+        400:
+          description: Failed to delete satellite
+        404:
+          description: Specified satellite not found
+        500:
+          description: Failed to delete satellite
 
   /satellites/scheduleDecommission:
     post:
@@ -128,12 +140,12 @@ paths:
             schema:
               $ref: "#/components/schemas/DecommissionSchedule"
       responses:
-        "200":
+        200:
           description: Satellite decommission scheduled successfully
-        "400":
-          description: Bad Request
-        "500":
-          description: "A problem occurred while attempting to schedule the satellite decommission."
+        400:
+          description: A problem occurred while attempting to schedule the satellite decommission.
+        500:
+          description: A problem occurred while attempting to schedule the satellite decommission.
 
 components:
   schemas:
