@@ -1,6 +1,9 @@
 # Ignore all generated MDX files
 demo/docs/**/*.mdx
 
+# Ignore yaml specs
+demo/examples/*.yaml
+
 # Cypress
 cypress/videos
 cypress/screenshots
