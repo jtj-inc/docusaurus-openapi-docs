@@ -16,7 +16,7 @@ const sidebars = {
       label: "ORC API",
       link: {
         type: "generated-index",
-        title: "ORC 2",
+        title: "_",
         slug: ".",
       },
       items: require("./docs/sidebar.js"),
