@@ -7,13 +7,13 @@ externalDocs:
   description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
   url: https://jamestasse.tech
 servers:
-  - url: https://202eacf0-0181-4395-bad7-51c5e57d0c2a.mock.pstmn.io
-    description: Production API server
+  - url: https://7d78d7b7-8937-45a4-bdd0-caf48a21728d.mock.pstmn.io
+    description: Mock API server
 
 paths:
   /satellites:
     get:
-      summary: Gets a list of satellites
+      summary: Get a list of satellites
       description: Returns a list of all satellites
       operationId: getSatellites
       parameters:
@@ -46,8 +46,8 @@ paths:
           description: Failed to retrieve satellite list
 
     put:
-      summary: Updates a satellite
-      description: Updates a satellite with the specified ID
+      summary: Update a satellite
+      description: Update a satellite with the specified ID
       operationId: updateSatellite
       requestBody:
         description: Updated satellite information
@@ -75,8 +75,8 @@ paths:
 
   /satellites/{id}:
     get:
-      summary: Gets a satellite by ID
-      description: Gets a satellite with the specified ID
+      summary: Get a satellite by ID
+      description: Get a satellite with the specified ID
       operationId: getSatelliteById
       parameters:
         - name: id
@@ -94,10 +94,10 @@ paths:
               schema:
                 $ref: "#/components/schemas/Satellite"
               example:
-                - id: 8
-                  name: "Asteroid Eradicator"
-                  owner: Laser Industries
-                  status: 1
+                id: 8
+                name: "Asteroid Eradicator"
+                owner: Laser Industries
+                status: 1
         400:
           description: Failed to get satellite information
         404:
@@ -106,8 +106,8 @@ paths:
           description: Failed to get satellite information
 
     delete:
-      summary: Deletes a satellite
-      description: Deletes a satellite with the specified ID
+      summary: Delete a satellite
+      description: Delete a satellite with the specified ID
       operationId: deleteSatelliteById
       parameters:
         - name: id
@@ -129,8 +129,8 @@ paths:
 
   /satellites/scheduleDecommission:
     post:
-      summary: Schedules decommission for the given satellite
-      description: Schedules a decommission for the satellite with the specified ID
+      summary: Schedule decommission for a satellite
+      description: Schedule a decommission for the satellite with the specified ID
       operationId: scheduleDecommissionForSatellite
       requestBody:
         description: Time at which the satellite should be decommissioned
