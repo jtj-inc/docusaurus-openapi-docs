@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Orbital Refuse Collector (ORC) API
-  description: The ORC API is a fictional API that provides resources to retrieve information about satellites and schedule their decommission.
+  description: The ORC API is a fictitious API that provides resources to retrieve information about satellites and schedule their decommission.
   version: 0.8.0
 externalDocs:
   description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
