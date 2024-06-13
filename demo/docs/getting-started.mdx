@@ -32,9 +32,9 @@ image: https://jamestasse.tech/wp-content/uploads/2024/05/satellite-reentry-crop
 1. Verify that the collection was imported correctly by sending a request. For this example I will send the `Get a list of satellites` request, but you can test with any request.
 1. Upon receiving a response, verify the following: <br/>
     a. The response status code was 200. <br/>
-    b. You received back either a generic object in the response body or no response body (depending upon which request you tested). <br/><br/>
+    b. You received back either a list of satellite objects in the response body or no response body (depending upon which request you tested). <br/><br/>
     ![Expected view of Postman upon receiving response](.\.\static\img\getting-started\200-after-initial-request.png)
 
-> **NOTE**: By default this collection uses a [Postman mock server](https://learning.postman.com/docs/designing-and-developing-your-api/mocking-data/setting-up-mock/) to simulate all endpoints. If you would like to change this behavior, you can modify the `baseUrl` value in the collection's variables.
+> **NOTE**: By default this collection uses a [Wiremock](https://wiremock.org/) server to simulate all endpoints. If you would like to change this behavior, you can modify the `baseUrl` value in the collection's variables.
   ![baseUrl configuration](.\.\static\img\getting-started\baseUrl.png)
 ---
