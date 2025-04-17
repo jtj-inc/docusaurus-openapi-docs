@@ -150,20 +150,22 @@ export default function ApiItem(props: Props): JSX.Element {
       <DocProvider content={props.content}>
         <HtmlClassNameProvider className={docHtmlClassName}>
           <div>
-            <DocItemMetadata />
+            <>{<DocItemMetadata />}</>
           </div>
           <DocItemLayout>
             <Provider store={store2}>
               <div className={clsx("row", "theme-api-markdown")}>
                 <div className="col col--7 openapi-left-panel__container">
                   <div>
-                    <MDXComponent />
+                    <>{<MDXComponent />}</>
                   </div>
                 </div>
                 <div className="col col--5 openapi-right-panel__container">
                   <BrowserOnly fallback={<div>Loading...</div>}>
                     {() => {
-                      return <ApiExplorer item={api} infoPath={infoPath} />;
+                      return (
+                        <>{<ApiExplorer item={api} infoPath={infoPath} />}</>
+                      );
                     }}
                   </BrowserOnly>
                 </div>
@@ -178,13 +180,13 @@ export default function ApiItem(props: Props): JSX.Element {
       <DocProvider content={props.content}>
         <HtmlClassNameProvider className={docHtmlClassName}>
           <div>
-            <DocItemMetadata />
+            <>{<DocItemMetadata />}</>
           </div>
           <DocItemLayout>
             <div className={clsx("row", "theme-api-markdown")}>
               <div className="col col--12">
                 <div>
-                  <MDXComponent />
+                  <>{<MDXComponent />}</>
                 </div>
               </div>
             </div>
@@ -199,13 +201,13 @@ export default function ApiItem(props: Props): JSX.Element {
     <DocProvider content={props.content}>
       <HtmlClassNameProvider className={docHtmlClassName}>
         <div>
-          <DocItemMetadata />
+          <>{<DocItemMetadata />}</>
         </div>
         <DocItemLayout>
           <div className="row">
             <div className="col col--12">
               <div>
-                <MDXComponent />
+                <>{<MDXComponent />}</>
               </div>
             </div>
           </div>

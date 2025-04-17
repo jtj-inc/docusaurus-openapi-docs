@@ -6,10 +6,11 @@
  * ========================================================================== */
 
 import React from "react";
-
 import { useColorMode } from "@docusaurus/theme-common";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import ThemedImage from "@theme/ThemedImage";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 export default function ApiLogo(props: any): JSX.Element | undefined {
   const { colorMode } = useColorMode();
@@ -26,28 +27,36 @@ export default function ApiLogo(props: any): JSX.Element | undefined {
   if (logo && darkLogo) {
     return (
       <React.Fragment>
-        <ThemedImage
-          alt={altText()}
-          sources={{
-            light: lightLogoUrl,
-            dark: darkLogoUrl,
-          }}
-          className="openapi__logo"
-        />
+        <>
+          {
+            <ThemedImage
+              alt={altText()}
+              sources={{
+                light: lightLogoUrl,
+                dark: darkLogoUrl,
+              }}
+              className="openapi__logo"
+            />
+          }
+        </>
       </React.Fragment>
     );
   }
   if (logo || darkLogo) {
     return (
       <React.Fragment>
-        <ThemedImage
-          alt={altText()}
-          sources={{
-            light: lightLogoUrl ?? darkLogoUrl,
-            dark: lightLogoUrl ?? darkLogoUrl,
-          }}
-          className="openapi__logo"
-        />
+        <>
+          {
+            <ThemedImage
+              alt={altText()}
+              sources={{
+                light: lightLogoUrl ?? darkLogoUrl,
+                dark: lightLogoUrl ?? darkLogoUrl,
+              }}
+              className="openapi__logo"
+            />
+          }
+        </>
       </React.Fragment>
     );
   }

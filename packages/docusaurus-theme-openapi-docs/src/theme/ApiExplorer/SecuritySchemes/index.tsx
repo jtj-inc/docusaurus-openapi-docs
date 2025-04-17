@@ -50,7 +50,7 @@ function SecuritySchemes(props: any) {
                   <span>
                     <strong>name:</strong>{" "}
                     <span>
-                      <Link to={infoAuthPath}>{name ?? key}</Link>
+                      <>{<Link to={infoAuthPath}>{name ?? key}</Link>}</>
                     </span>
                   </span>
                   <span>
@@ -93,7 +93,7 @@ function SecuritySchemes(props: any) {
                   <span>
                     <strong>name:</strong>{" "}
                     <span>
-                      <Link to={infoAuthPath}>{name ?? key}</Link>
+                      <>{<Link to={infoAuthPath}>{name ?? key}</Link>}</>
                     </span>
                   </span>
                   <span>
@@ -134,7 +134,9 @@ function SecuritySchemes(props: any) {
                 <span>
                   <strong>name:</strong>{" "}
                   <span>
-                    <Link to={infoAuthPath}>{auth.name ?? auth.key}</Link>
+                    <>
+                      {<Link to={infoAuthPath}>{auth.name ?? auth.key}</Link>}
+                    </>
                   </span>
                 </span>
                 <span>
@@ -164,7 +166,7 @@ function SecuritySchemes(props: any) {
                 <span>
                   <strong>name:</strong>{" "}
                   <span>
-                    <Link to={infoAuthPath}>{name ?? key}</Link>
+                    <>{<Link to={infoAuthPath}>{name ?? key}</Link>}</>
                   </span>
                 </span>
                 <span>
@@ -208,7 +210,7 @@ function SecuritySchemes(props: any) {
                 <span>
                   <strong>name:</strong>{" "}
                   <span>
-                    <Link to={infoAuthPath}>{name ?? key}</Link>
+                    <>{<Link to={infoAuthPath}>{name ?? key}</Link>}</>
                   </span>
                 </span>
                 <span>
@@ -260,7 +262,7 @@ function SecuritySchemes(props: any) {
                 <span>
                   <strong>name:</strong>{" "}
                   <span>
-                    <Link to={infoAuthPath}>{name ?? key}</Link>
+                    <>{<Link to={infoAuthPath}>{name ?? key}</Link>}</>
                   </span>
                 </span>
                 <span>

@@ -32,11 +32,11 @@ function useDocTOC() {
   const hidden = frontMatter.hide_table_of_contents;
   const canRender = !hidden && toc.length > 0;
 
-  const mobile = canRender ? <DocItemTOCMobile /> : undefined;
+  const mobile = canRender ? <>{<DocItemTOCMobile />}</> : undefined;
 
   const desktop =
     canRender && (windowSize === "desktop" || windowSize === "ssr") ? (
-      <DocItemTOCDesktop />
+      <>{<DocItemTOCDesktop />}</>
     ) : undefined;
 
   return {
@@ -56,7 +56,7 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
     <div className="row">
       <div className={clsx("col", !docTOC.hidden && styles.docItemCol)}>
         <div>
-          <DocVersionBanner />
+          <>{<DocVersionBanner />}</>
         </div>
         <div className={styles.docItemContainer}>
           <article>
@@ -64,21 +64,21 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
               <DocBreadcrumbs />
             </div>
             <div>
-              <DocVersionBadge />
+              <>{<DocVersionBadge />}</>
             </div>
             {docTOC.mobile}
             <div>
-              <DocItemContent>{children}</DocItemContent>
+              <>{<DocItemContent>{children}</DocItemContent>}</>
             </div>
             <div className={clsx("col", api ? "col--7" : "col--12")}>
               <div>
-                <DocItemFooter />
+                <>{<DocItemFooter />}</>
               </div>
             </div>
           </article>
           <div className={clsx("col", api ? "col--7" : "col--12")}>
             <div>
-              <DocItemPaginator />
+              <>{<DocItemPaginator />}</>
             </div>
           </div>
         </div>
