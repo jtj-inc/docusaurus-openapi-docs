@@ -55,19 +55,31 @@ export default function DocItemLayout({ children }: Props): JSX.Element {
   return (
     <div className="row">
       <div className={clsx("col", !docTOC.hidden && styles.docItemCol)}>
-        <DocVersionBanner />
+        <React.Fragment>
+          <DocVersionBanner />
+        </React.Fragment>
         <div className={styles.docItemContainer}>
           <article>
-            <DocBreadcrumbs />
-            <DocVersionBadge />
+            <React.Fragment>
+              <DocBreadcrumbs />
+            </React.Fragment>
+            <React.Fragment>
+              <DocVersionBadge />
+            </React.Fragment>
             {docTOC.mobile}
-            <DocItemContent>{children}</DocItemContent>
+            <React.Fragment>
+              <DocItemContent>{children}</DocItemContent>
+            </React.Fragment>
             <div className={clsx("col", api ? "col--7" : "col--12")}>
-              <DocItemFooter />
+              <React.Fragment>
+                <DocItemFooter />
+              </React.Fragment>
             </div>
           </article>
           <div className={clsx("col", api ? "col--7" : "col--12")}>
-            <DocItemPaginator />
+            <React.Fragment>
+              <DocItemPaginator />
+            </React.Fragment>
           </div>
         </div>
       </div>

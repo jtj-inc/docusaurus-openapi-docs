@@ -25,26 +25,30 @@ export default function ApiLogo(props: any): JSX.Element | undefined {
 
   if (logo && darkLogo) {
     return (
-      <ThemedImage
-        alt={altText()}
-        sources={{
-          light: lightLogoUrl,
-          dark: darkLogoUrl,
-        }}
-        className="openapi__logo"
-      />
+      <React.Fragment>
+        <ThemedImage
+          alt={altText()}
+          sources={{
+            light: lightLogoUrl,
+            dark: darkLogoUrl,
+          }}
+          className="openapi__logo"
+        />
+      </React.Fragment>
     );
   }
   if (logo || darkLogo) {
     return (
-      <ThemedImage
-        alt={altText()}
-        sources={{
-          light: lightLogoUrl ?? darkLogoUrl,
-          dark: lightLogoUrl ?? darkLogoUrl,
-        }}
-        className="openapi__logo"
-      />
+      <React.Fragment>
+        <ThemedImage
+          alt={altText()}
+          sources={{
+            light: lightLogoUrl ?? darkLogoUrl,
+            dark: lightLogoUrl ?? darkLogoUrl,
+          }}
+          className="openapi__logo"
+        />
+      </React.Fragment>
     );
   }
 

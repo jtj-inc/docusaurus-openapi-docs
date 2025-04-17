@@ -57,10 +57,11 @@ function MethodEndpoint({ method, path }: Props) {
       <BrowserOnly>
         {() => {
           if (serverUrlWithVariables.length) {
-            return serverUrlWithVariables;
+            return <>{serverUrlWithVariables}</>;
           } else if (serverValue && serverValue.url) {
-            return serverValue.url;
+            return <>{serverValue.url}</>;
           }
+          return <></>;
         }}
       </BrowserOnly>
     );
