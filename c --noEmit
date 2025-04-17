@@ -1,0 +1,18 @@
+[1mdiff --git a/packages/docusaurus-theme-openapi-docs/src/theme/ApiExplorer/MethodEndpoint/index.tsx b/packages/docusaurus-theme-openapi-docs/src/theme/ApiExplorer/MethodEndpoint/index.tsx[m
+[1mindex 18f7850..09471ba 100644[m
+[1m--- a/packages/docusaurus-theme-openapi-docs/src/theme/ApiExplorer/MethodEndpoint/index.tsx[m
+[1m+++ b/packages/docusaurus-theme-openapi-docs/src/theme/ApiExplorer/MethodEndpoint/index.tsx[m
+[36m@@ -57,10 +57,11 @@[m [mfunction MethodEndpoint({ method, path }: Props) {[m
+       <BrowserOnly>[m
+         {() => {[m
+           if (serverUrlWithVariables.length) {[m
+[31m-            return serverUrlWithVariables;[m
+[32m+[m[32m            return <>{serverUrlWithVariables}</>;[m
+           } else if (serverValue && serverValue.url) {[m
+[31m-            return serverValue.url;[m
+[32m+[m[32m            return <>{serverValue.url}</>;[m
+           }[m
+[32m+[m[32m          return <></>;[m
+         }}[m
+       </BrowserOnly>[m
+     );[m

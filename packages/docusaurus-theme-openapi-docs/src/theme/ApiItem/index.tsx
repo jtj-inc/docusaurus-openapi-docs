@@ -49,9 +49,7 @@ interface SchemaFrontMatter extends DocFrontMatter {
 }
 
 export default function ApiItem(props: Props): JSX.Element {
-  const docHtmlClassName = `docs-doc-id-${
-    props.content.metadata.unversionedId || props.content.metadata.id
-  }`;
+  const docHtmlClassName = `docs-doc-id-${props.content.metadata.id}`;
   const MDXComponent = props.content;
   const { frontMatter } = MDXComponent;
   const { info_path: infoPath } = frontMatter as DocFrontMatter;
@@ -151,16 +149,16 @@ export default function ApiItem(props: Props): JSX.Element {
     return (
       <DocProvider content={props.content}>
         <HtmlClassNameProvider className={docHtmlClassName}>
-          <React.Fragment>
+          <div>
             <DocItemMetadata />
-          </React.Fragment>
+          </div>
           <DocItemLayout>
             <Provider store={store2}>
               <div className={clsx("row", "theme-api-markdown")}>
                 <div className="col col--7 openapi-left-panel__container">
-                  <React.Fragment>
+                  <div>
                     <MDXComponent />
-                  </React.Fragment>
+                  </div>
                 </div>
                 <div className="col col--5 openapi-right-panel__container">
                   <BrowserOnly fallback={<div>Loading...</div>}>
@@ -179,15 +177,15 @@ export default function ApiItem(props: Props): JSX.Element {
     return (
       <DocProvider content={props.content}>
         <HtmlClassNameProvider className={docHtmlClassName}>
-          <React.Fragment>
+          <div>
             <DocItemMetadata />
-          </React.Fragment>
+          </div>
           <DocItemLayout>
             <div className={clsx("row", "theme-api-markdown")}>
               <div className="col col--12">
-                <React.Fragment>
+                <div>
                   <MDXComponent />
-                </React.Fragment>
+                </div>
               </div>
             </div>
           </DocItemLayout>
@@ -200,15 +198,15 @@ export default function ApiItem(props: Props): JSX.Element {
   return (
     <DocProvider content={props.content}>
       <HtmlClassNameProvider className={docHtmlClassName}>
-        <React.Fragment>
+        <div>
           <DocItemMetadata />
-        </React.Fragment>
+        </div>
         <DocItemLayout>
           <div className="row">
             <div className="col col--12">
-              <React.Fragment>
+              <div>
                 <MDXComponent />
-              </React.Fragment>
+              </div>
             </div>
           </div>
         </DocItemLayout>

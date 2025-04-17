@@ -49,9 +49,9 @@ function SecuritySchemes(props: any) {
                 >
                   <span>
                     <strong>name:</strong>{" "}
-                    <React.Fragment>
+                    <span>
                       <Link to={infoAuthPath}>{name ?? key}</Link>
-                    </React.Fragment>
+                    </span>
                   </span>
                   <span>
                     <strong>type: </strong>
@@ -92,9 +92,9 @@ function SecuritySchemes(props: any) {
                 >
                   <span>
                     <strong>name:</strong>{" "}
-                    <React.Fragment>
+                    <span>
                       <Link to={infoAuthPath}>{name ?? key}</Link>
-                    </React.Fragment>
+                    </span>
                   </span>
                   <span>
                     <strong>type: </strong>
@@ -133,9 +133,9 @@ function SecuritySchemes(props: any) {
               >
                 <span>
                   <strong>name:</strong>{" "}
-                  <React.Fragment>
+                  <span>
                     <Link to={infoAuthPath}>{auth.name ?? auth.key}</Link>
-                  </React.Fragment>
+                  </span>
                 </span>
                 <span>
                   <strong>type: </strong>
@@ -163,9 +163,9 @@ function SecuritySchemes(props: any) {
               >
                 <span>
                   <strong>name:</strong>{" "}
-                  <React.Fragment>
+                  <span>
                     <Link to={infoAuthPath}>{name ?? key}</Link>
-                  </React.Fragment>
+                  </span>
                 </span>
                 <span>
                   <strong>type: </strong>
@@ -207,9 +207,9 @@ function SecuritySchemes(props: any) {
               >
                 <span>
                   <strong>name:</strong>{" "}
-                  <React.Fragment>
+                  <span>
                     <Link to={infoAuthPath}>{name ?? key}</Link>
-                  </React.Fragment>
+                  </span>
                 </span>
                 <span>
                   <strong>type: </strong>
@@ -259,9 +259,9 @@ function SecuritySchemes(props: any) {
               >
                 <span>
                   <strong>name:</strong>{" "}
-                  <React.Fragment>
+                  <span>
                     <Link to={infoAuthPath}>{name ?? key}</Link>
-                  </React.Fragment>
+                  </span>
                 </span>
                 <span>
                   <strong>type: </strong>
