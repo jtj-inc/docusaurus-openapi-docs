@@ -1,0 +1,71 @@
+---
+id: delete-satellite-by-id
+title: "Delete a satellite"
+description: "Delete a satellite with the specified ID"
+sidebar_label: "Delete a satellite"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU8Fu2zAM/RWBpxYQkmDohsG3rc2AABs6ZN0pyEGR6JmoLLkilS4w/O+D7LQZ0m5AT5YpPT7yPbIHh2wTdUIxQAU36FFQGcVG0HsSVI8kjZIGFXdoqSZ0anUDGmKHyRTYykEFbgT+eEJ9PqwcaOhMMi0KJoZq00MwLUIFVK6o0HVGGtBnNTwnmXgSPmRK6KCSlFED2wZbA1UPcujGdEHwFybQUMfUGplCH65gGLYFzl0MjFwQ7xaL8vkX39SEU5ytReY6e3+AQcPVa7Avhjw6JfEIO0k2Qa5eYXpW8CRviKLqmIMrqPdvJRo0tChNPFkwqi4NVDB/fsfzntwAGhjT/smMnDxU0Ih0XM3nMdnZIyVso703Hc2sj9m9sOZbtPfq0/eVmhJBEZhCHUc3SHyx4zbtSIxXa6wzo7qO3qOVmNTF7fr6sqBfpL1rUN2ur8fMxMqomqyQUMw8xqQxoroU9+SQVUKOOVnkIklCSYR7VKWM4j7FoMwuZjnJxMoEp8rcuOyxzDIl5dDGtiVmimEGGoouUzWL2cfZorjRRZbWhNLccXJfrsd5Lz3YGASDvG2ZjqMs+FvmnTcUCv/oUH+0cwOnfkBDRQ62GprIUu76fmcYfyY/DCX8kDEdoNpsNexNIrMrzmx6cMTl7KCqjWf8T+0X6+PaXaqzfXy11GPQhEOR0vhc/kDDPR6mhR+2f4/qzfLr8m4Jw/AHlpOLUA==
+sidebar_class_name: "delete api-method"
+info_path: docs/orbital-refuse-collector-orc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete a satellite"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/satellites/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete a satellite with the specified ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","description":"Satellite ID","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Satellite deleted successfully"},"400":{"description":"Failed to delete satellite"},"404":{"description":"Specified satellite not found"},"500":{"description":"Failed to delete satellite"}}}
+>
+  
+</StatusCodes>
+
+
+      

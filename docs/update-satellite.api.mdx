@@ -1,0 +1,71 @@
+---
+id: update-satellite
+title: "Update a satellite"
+description: "Update a satellite with the specified ID"
+sidebar_label: "Update a satellite"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVU1vEzEQ/SvWnEAySUAFwd5KAakSqFXanqIcHHuSdetdu/Y4IVrtf0ezu/miBYG4sqfVeObN85sPN2Aw6WgDWV9DAXfBKEKhRFKEzllCsbFUCipRpIDaLi0acfkJJPiAUXHYpYECchd4s4sCCREfMyb66M0WiubZPOYoja2XPlYd4BBsIxooKGaUoH1NWBMDqRCc1Z3j+D4xWgNJl1gp/qNtQCjAL+5RE0gIkXmSxcSn1hz52JpwhREk9Jl707szaCXUqsIj10TR1is+8Jsa47MniRTl9Ef47fEFZ8xqyLjD36PNJZAlx3AHbdu2R0jB16m/2JvJ5KnIN8+JK/JO+qw1prTMzm3hv8KnCkvA76oKDnd3+rBjDOeJMHprxI2z9SqVnqjDG3jDV5UwisvaZGaO6ZCqeN1X7uy5Yn1R1qER5IcC/WI0Wglv/yW8lVAhlZ5nNuSufopKKGC8D+gYY1xjTFDMGsjRQQElUUjFeOyjHm1sxMrrBxXsSDufWd1TOt+8fhDn15eiB4J2LoFbaXpYCp9PBZ7sBR4KflB0b9jpOGkl8K26VhiKdxUXlpQTU1zmhOLCO4eafBQvrqYXL5nLE5K3JYqr6UXH0yahxNJqsmR9Tp2NSkUiRL+2BpOImHyOGhOLHJFruz6dLLXwmQ7CJ6FqI3hwTHbIK9RGYVD7qrIpWV+PQAKr3LOZjN6PJlzf4BNVqpu6QZGnW/nnuzSH+f2bHT7MEeF3GgenbNdfXb2boS9mcNQXcwmlT8TWplmohHfRtS2bHzPGLRSzuYS1ilYtuCazeSuhRGW4irMGHnALBVz0RF/dcm52d5k5PFk6rdxFnGuNgX7rOz9q6+u7W5CwGN6dyhsOiWrDz4raQAHd48XB3S7pbA04Va+yWrFvD8nfDwjCdKo=
+sidebar_class_name: "put api-method"
+info_path: docs/orbital-refuse-collector-orc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update a satellite"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/satellites"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update a satellite with the specified ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Updated satellite information","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Satellite information updated successfully","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"},"example":{"id":9,"name":"Asteroid Slingshotter","owner":"Laser Industries","status":1}}}},"400":{"description":"Failed to update satellite information"},"500":{"description":"Failed to update satellite information"}}}
+>
+  
+</StatusCodes>
+
+
+      

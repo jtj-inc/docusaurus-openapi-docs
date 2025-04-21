@@ -1,6 +1,6 @@
 {
-  "name": "docusaurus-template-openapi-docs",
-  "version": "4.3.7",
+  "name": "orc-docs",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

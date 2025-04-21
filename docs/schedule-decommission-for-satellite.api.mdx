@@ -1,0 +1,71 @@
+---
+id: schedule-decommission-for-satellite
+title: "Schedule decommission for a satellite"
+description: "Schedule a decommission for the satellite with the specified ID"
+sidebar_label: "Schedule decommission for a satellite"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1lE9v2zAMxb+KwNMGaEkwdMPgW5duQA9DirQ7BTkoMhOzlS1XopIFhr/7QDt/3KTHLadAEB8f9X5mAzlGG6hm8hVk8GgLzJNDZVSO1pclxUi+UmsfFBeoomF0jhjVjrjoj2q0tCbM1f0daPA1BiNq9zlkEA96dwOxnz48HmVAQ8DXhJG/+3wPWXPh54lKVIbVriBbXDiIhU8uVyt8YxXzgyYFzCHjkFCD9RVjxaJv6tqR7RyOn6M0aTqXpZF/vK8RMvCrZ7QMGuog8zBh7O4de8tsp8tUMW4wgIa1D6Xh/ujrDbQahs5ueVAUOVC1gbYdml0AifuLoqUGJnZSNXzGY1TQtr1KrH0Ve6OfJ5Prtzw9+ttojxHlKiZrMcZ1cm4v5m/eU7lVdfArh6Xy1qYQMJdwhBhmLGumaqPYn1QvMht2HkmPL/+9R6uhRC684Fj72KVquIAMxqeaOH4PVNAQMWwxRMgWDaTgIIOCuY7ZeOyDHe0oYOnti6lpZJ1PfXjDSX55+6JuH+5VLwTtUoNQNz9D/+OPKWtJ94KvyTU9J2o0ULX2HU4HMmZhRWycmuM6RVRT7xxa9kF9mM2nH8XClbenAtVsPu3sUVRGrckyMfkUuzMuDEsQW8oxqoDRp2AxyssH5EC4RSU2hHkByax84nMOUZkqf5MRhYtsNMjj9m4mo2+jiUwmGZWm+y4rU+JwKV2tJHNudzlec/7o/8FWO3y1jH94XDtDlTjtgGgONC3O6UUB5z2elhoKITBbQNOsTMTfwbWtHL8mDHvIFksNWxPIrCTUxbLVUKDJMXQAvuAeMpj2Y316Ekty3SWxdrXXBLUT+A+zxyfQsDos2dLnUhPMTpal2UEG3eqW6m6BdGcNOFNtktnI3V5Tfn8B+50y5Q==
+sidebar_class_name: "post api-method"
+info_path: docs/orbital-refuse-collector-orc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Schedule decommission for a satellite"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/satellites/scheduleDecommission"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Schedule a decommission for the satellite with the specified ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"description":"Time at which the satellite should be decommissioned","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"satelliteId":{"type":"integer","format":"int64"},"decommissionAt":{"type":"string"}},"required":["id","decommissionAt"],"title":"DecommissionSchedule"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Satellite decommission scheduled successfully"},"400":{"description":"A problem occurred while attempting to schedule the satellite decommission."},"500":{"description":"A problem occurred while attempting to schedule the satellite decommission."}}}
+>
+  
+</StatusCodes>
+
+
+      

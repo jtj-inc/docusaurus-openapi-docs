@@ -1,0 +1,71 @@
+---
+id: get-satellite-by-id
+title: "Get a satellite by ID"
+description: "Get a satellite with the specified ID"
+sidebar_label: "Get a satellite by ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1v2zAM/SsCTy1gJN3QDYVvXdcVATZ06LpTkIMiMTVb2XJFOm1g+L8PtJ00/dhQ7GRbMh/J9/jYgkd2iWqhWEEOFyjGGraCIZCgeSApjBRouEZHK0JvZl8hg1hjshoz85DDDcqvbciXzcxDBrVNtkTBxJDPW6hsiZAD6RVpotpKAdmL7DuQIUnC+4YSesglNZgBuwJLC3kLsql7uErwBhNksIqptDIcfT6GrltoONexYmSN+Hh0pI+/5aNqQKBYmYSSCNfoDTfOIfOqCWEDGbhYCVaiOLauA7n+/+ktK1j7ury4vEUnSkZSvoSGUsi/q4VsJG33K0ui6kYv4kOF6c0bFisNv4+ifYLngzR9xi3+Dm2RgZAE3GdMk+GjLeuA255OthXDKQumSN6cJ+uVpph2qDl8t4zJzCrfaN3IT4nyD12ndR2/JdY3SwG9kWhuUPZGdE866GOP3xB6N71PcVUUs4pN5TXq039n7DIoUYo4+qAffSkgh+kugKct+U7bxLTeOqJJAXIoRGrOp9OY3OSBEpbR3dmaJi7Exr/yx4/o7szpz5kZgECnXIvp9R4VukxLEhvMFa4aRnMWQ0AnMZmDy6uzQ41+BXtdoLm8OuuRiY01K3JCQrHh/kwKK6ZOcU0e2STk2CSHrMRsvfLMQHYZmz2+2NjKG3WHbwLqNqFkPLpYlsRMsZpABsrLUM3R5GRypJrUkaW0vbXGuXq5nZabYVE8a6d98um719loFsFHmdbBUj9JvULtKOccnvqBDHLyaosisuhd2y4t4+8Uuk6P7xtMG8jniwzWNpFdqjLzFjyxvnvIVzYw/qPwg6vRmofmxVJ8s9Tx0Fa6ptY2NPoFGdzhZti63aLLoEDr1YHzdrw4dQ5r2Qt5tdZ0wnbjfXF+DV33B5cpH0M=
+sidebar_class_name: "get api-method"
+info_path: docs/orbital-refuse-collector-orc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get a satellite by ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/satellites/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get a satellite with the specified ID
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","description":"Satellite ID","required":true,"schema":{"type":"integer","format":"int64"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Satellite information retrieved successfully","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"},"example":{"id":8,"name":"Asteroid Eradicator","owner":"Laser Industries","status":1}}}},"400":{"description":"Failed to get satellite information"},"404":{"description":"Specified satellite not found"},"500":{"description":"Failed to get satellite information"}}}
+>
+  
+</StatusCodes>
+
+
+      
