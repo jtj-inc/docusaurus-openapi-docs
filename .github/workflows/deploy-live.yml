@@ -1,0 +1,57 @@
+name: Deploy Live
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    if: github.repository_owner	== 'jtasse'
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn --prefer-offline
+
+      - name: Build packages
+        run: yarn build-packages
+
+      - name: Build site
+        run: yarn build-demo && zip -r build.zip demo/build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build.zip
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "yarn"
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+
+      - name: Unzip build artifact
+        run: unzip build.zip
