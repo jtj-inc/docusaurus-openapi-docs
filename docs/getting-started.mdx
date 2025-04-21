@@ -5,37 +5,42 @@ sidebar_label: Getting Started
 title: Getting Started
 image: https://jamestasse.tech/wp-content/uploads/2024/05/satellite-reentry-cropped.png
 ---
+
 <head>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 
 <div align="left">
-<img width="200" src="https://jamestasse.tech/wp-content/uploads/2024/05/satellite-reentry-cropped.png" />
+  <img
+    width="200"
+    src="https://jamestasse.tech/wp-content/uploads/2024/05/satellite-reentry-cropped.png"
+  />
 </div>
 
 ## Prerequisites
+
 1. Postman client <br/><br/>
-> **NOTE**:  You can use either the [Postman desktop client](https://www.postman.com/downloads/) or web client ([see Postman workspaces](https://www.postman.com/product/workspaces/)). However, this guide will focus on the user experience in the Postman desktop client.
+   > **NOTE**: You can use either the [Postman desktop client](https://www.postman.com/downloads/) or web client ([see Postman workspaces](https://www.postman.com/product/workspaces/)). However, this guide will focus on the user experience in the Postman desktop client.
 1. An internet connection
 
 ## Setup
 
 1. Begin by downloading the [ORC API specification](https://github.com/jtj-inc/docusaurus-openapi-docs/blob/main/demo/examples/ORC.yaml).
-![Downloading the API specification](.\.\static\img\getting-started\downloading-spec.png)
+   ![Downloading the API specification](..\static\img\getting-started\downloading-spec.png)
 1. Next, import the ORC API specification into Postman.
-> **NOTE**: for instructions on how to import an API spec into Postman, see [Importing an API](https://learning.postman.com/docs/designing-and-developing-your-api/importing-an-api/).
+   > **NOTE**: for instructions on how to import an API spec into Postman, see [Importing an API](https://learning.postman.com/docs/designing-and-developing-your-api/importing-an-api/).
 1. In Postman you should now have a collection with the name `Orbital Refuse Collector (ORC) API`.
 
-  ![Expected view of Postman collection after import](.\.\static\img\getting-started\Postman_ORC_Collection_Post-Import.png)
+![Expected view of Postman collection after import](..\static\img\getting-started\Postman_ORC_Collection_Post-Import.png)
 
 ## Usage
 
 1. Verify that the collection was imported correctly by sending a request. For this example I will send the `Get a list of satellites` request, but you can test with any request.
 1. Upon receiving a response, verify the following: <br/>
-    a. The response status code was 200. <br/>
-    b. You received back either a list of satellite objects in the response body or no response body (depending upon which request you tested). <br/><br/>
-    ![Expected view of Postman upon receiving response](.\.\static\img\getting-started\200-after-initial-request.png)
+   a. The response status code was 200. <br/>
+   b. You received back either a list of satellite objects in the response body or no response body (depending upon which request you tested). <br/><br/>
+   ![Expected view of Postman upon receiving response](..\static\img\getting-started\200-after-initial-request.png)
 
 > **NOTE**: By default this collection uses a [Wiremock](https://wiremock.org/) server to simulate all endpoints. If you would like to change this behavior, you can modify the `baseUrl` value in the collection's variables.
-  ![baseUrl configuration](.\.\static\img\getting-started\baseUrl.png)
----
+
+## ![baseUrl configuration](..\static\img\getting-started\baseUrl.png)

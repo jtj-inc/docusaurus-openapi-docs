@@ -23,18 +23,13 @@ import Heading from "@theme/Heading";
   as={"h1"}
   className={"openapi__heading"}
   children={"Get a satellite by ID"}
->
-</Heading>
+></Heading>
 
 <MethodEndpoint
   method={"get"}
   path={"/satellites/{id}"}
   context={"endpoint"}
->
-  
-</MethodEndpoint>
-
-
+></MethodEndpoint>
 
 Get a satellite with the specified ID
 
@@ -43,29 +38,52 @@ Get a satellite with the specified ID
   as={"h2"}
   className={"openapi-tabs__heading"}
   children={"Request"}
->
-</Heading>
+></Heading>
 
 <ParamsDetails
-  parameters={[{"name":"id","in":"path","description":"Satellite ID","required":true,"schema":{"type":"integer","format":"int64"}}]}
->
-  
-</ParamsDetails>
+  parameters={[
+    {
+      name: "id",
+      in: "path",
+      description: "Satellite ID",
+      required: true,
+      schema: { type: "integer", format: "int64" },
+    },
+  ]}
+></ParamsDetails>
 
-<RequestSchema
-  title={"Body"}
-  body={undefined}
->
-  
-</RequestSchema>
+<RequestSchema title={"Body"} body={undefined}></RequestSchema>
 
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Satellite information retrieved successfully","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"},"example":{"id":8,"name":"Asteroid Eradicator","owner":"Laser Industries","status":1}}}},"400":{"description":"Failed to get satellite information"},"404":{"description":"Specified satellite not found"},"500":{"description":"Failed to get satellite information"}}}
->
-  
-</StatusCodes>
-
-
-      
+  responses={{
+    "200": {
+      description: "Satellite information retrieved successfully",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              id: { type: "integer", format: "int64" },
+              name: { type: "string" },
+              owner: { type: "string" },
+              status: { type: "integer", format: "int64" },
+            },
+            required: ["id", "name", "owner", "status"],
+            title: "Satellite",
+          },
+          example: {
+            id: 8,
+            name: "Asteroid Eradicator",
+            owner: "Laser Industries",
+            status: 1,
+          },
+        },
+      },
+    },
+    "400": { description: "Failed to get satellite information" },
+    "404": { description: "Specified satellite not found" },
+    "500": { description: "Failed to get satellite information" },
+  }}
+></StatusCodes>

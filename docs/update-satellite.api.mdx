@@ -23,18 +23,13 @@ import Heading from "@theme/Heading";
   as={"h1"}
   className={"openapi__heading"}
   children={"Update a satellite"}
->
-</Heading>
+></Heading>
 
 <MethodEndpoint
   method={"put"}
   path={"/satellites"}
   context={"endpoint"}
->
-  
-</MethodEndpoint>
-
-
+></MethodEndpoint>
 
 Update a satellite with the specified ID
 
@@ -43,29 +38,62 @@ Update a satellite with the specified ID
   as={"h2"}
   className={"openapi-tabs__heading"}
   children={"Request"}
->
-</Heading>
+></Heading>
 
-<ParamsDetails
-  parameters={undefined}
->
-  
-</ParamsDetails>
+<ParamsDetails parameters={undefined}></ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={{"description":"Updated satellite information","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"}}}}}
->
-  
-</RequestSchema>
+  body={{
+    description: "Updated satellite information",
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          properties: {
+            id: { type: "integer", format: "int64" },
+            name: { type: "string" },
+            owner: { type: "string" },
+            status: { type: "integer", format: "int64" },
+          },
+          required: ["id", "name", "owner", "status"],
+          title: "Satellite",
+        },
+      },
+    },
+  }}
+></RequestSchema>
 
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Satellite information updated successfully","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"owner":{"type":"string"},"status":{"type":"integer","format":"int64"}},"required":["id","name","owner","status"],"title":"Satellite"},"example":{"id":9,"name":"Asteroid Slingshotter","owner":"Laser Industries","status":1}}}},"400":{"description":"Failed to update satellite information"},"500":{"description":"Failed to update satellite information"}}}
->
-  
-</StatusCodes>
-
-
-      
+  responses={{
+    "200": {
+      description: "Satellite information updated successfully",
+      content: {
+        "application/json": {
+          schema: {
+            type: "object",
+            properties: {
+              id: { type: "integer", format: "int64" },
+              name: { type: "string" },
+              owner: { type: "string" },
+              status: { type: "integer", format: "int64" },
+            },
+            required: ["id", "name", "owner", "status"],
+            title: "Satellite",
+          },
+          example: {
+            id: 9,
+            name: "Asteroid Slingshotter",
+            owner: "Laser Industries",
+            status: 1,
+          },
+        },
+      },
+    },
+    "400": { description: "Failed to update satellite information" },
+    "500": { description: "Failed to update satellite information" },
+  }}
+></StatusCodes>

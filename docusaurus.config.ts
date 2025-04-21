@@ -4,7 +4,8 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 
-const DOCUSAURUS_OPENAPI_DOCS_URL = "https://jtj-inc.github.io/docusaurus-openapi-docs/";
+const DOCUSAURUS_OPENAPI_DOCS_URL =
+  "https://jtj-inc.github.io/docusaurus-openapi-docs/";
 import { DOCUSAURUS_VERSION } from "@docusaurus/utils";
 
 const config: Config = {
@@ -15,7 +16,6 @@ const config: Config = {
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

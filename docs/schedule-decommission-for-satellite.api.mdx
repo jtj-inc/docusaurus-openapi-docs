@@ -23,18 +23,13 @@ import Heading from "@theme/Heading";
   as={"h1"}
   className={"openapi__heading"}
   children={"Schedule decommission for a satellite"}
->
-</Heading>
+></Heading>
 
 <MethodEndpoint
   method={"post"}
   path={"/satellites/scheduleDecommission"}
   context={"endpoint"}
->
-  
-</MethodEndpoint>
-
-
+></MethodEndpoint>
 
 Schedule a decommission for the satellite with the specified ID
 
@@ -43,29 +38,43 @@ Schedule a decommission for the satellite with the specified ID
   as={"h2"}
   className={"openapi-tabs__heading"}
   children={"Request"}
->
-</Heading>
+></Heading>
 
-<ParamsDetails
-  parameters={undefined}
->
-  
-</ParamsDetails>
+<ParamsDetails parameters={undefined}></ParamsDetails>
 
 <RequestSchema
   title={"Body"}
-  body={{"description":"Time at which the satellite should be decommissioned","required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"satelliteId":{"type":"integer","format":"int64"},"decommissionAt":{"type":"string"}},"required":["id","decommissionAt"],"title":"DecommissionSchedule"}}}}}
->
-  
-</RequestSchema>
+  body={{
+    description: "Time at which the satellite should be decommissioned",
+    required: true,
+    content: {
+      "application/json": {
+        schema: {
+          type: "object",
+          properties: {
+            satelliteId: { type: "integer", format: "int64" },
+            decommissionAt: { type: "string" },
+          },
+          required: ["id", "decommissionAt"],
+          title: "DecommissionSchedule",
+        },
+      },
+    },
+  }}
+></RequestSchema>
 
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Satellite decommission scheduled successfully"},"400":{"description":"A problem occurred while attempting to schedule the satellite decommission."},"500":{"description":"A problem occurred while attempting to schedule the satellite decommission."}}}
->
-  
-</StatusCodes>
-
-
-      
+  responses={{
+    "200": { description: "Satellite decommission scheduled successfully" },
+    "400": {
+      description:
+        "A problem occurred while attempting to schedule the satellite decommission.",
+    },
+    "500": {
+      description:
+        "A problem occurred while attempting to schedule the satellite decommission.",
+    },
+  }}
+></StatusCodes>

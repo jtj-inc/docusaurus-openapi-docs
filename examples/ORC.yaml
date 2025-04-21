@@ -1,180 +1,180 @@
-  openapi: 3.0.0
-  info:
-    title: Orbital Refuse Collector (ORC) API
-    description: The ORC API is a fictitious API that provides resources to retrieve information about satellites and schedule their decommission.
-    version: 0.8.0
-  externalDocs:
-    description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
-    url: https://jamestasse.tech
-  servers:
-    - url: https://orc.wiremockapi.cloud
-      description: Mock API server
+openapi: 3.0.0
+info:
+  title: Orbital Refuse Collector (ORC) API
+  description: The ORC API is a fictitious API that provides resources to retrieve information about satellites and schedule their decommission.
+  version: 0.8.0
+externalDocs:
+  description: Want to know more about my experience with APIs? Visit me at jamestasse.tech.
+  url: https://jamestasse.tech
+servers:
+  - url: https://orc.wiremockapi.cloud
+    description: Mock API server
 
-  paths:
-    /satellites:
-      get:
-        summary: Get a list of satellites
-        description: Returns a list of all satellites
-        operationId: getSatellites
-        parameters:
-          - name: "satellitesToRetrieve"
-            in: query
-            description: Number of satellites to retrieve
-            required: true
-            schema:
-              type: integer
-              format: number
-        responses:
-          200:
-            description: A list of satellites
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/Satellite"
-                example:
-                  - id: 9
-                    name: "Asteroid Incinerator"
-                    owner: Laser Industries
-                    status: 1
-                  - id: 10
-                    name: "CleaningBot 1009"
-                    owner: CL4PTRAP
-                    status: 0
-          400:
-            description: Failed to retrieve satellite list
-          500:
-            description: Failed to retrieve satellite list
-
-      put:
-        summary: Update a satellite
-        description: Update a satellite with the specified ID
-        operationId: updateSatellite
-        requestBody:
-          description: Updated satellite information
+paths:
+  /satellites:
+    get:
+      summary: Get a list of satellites
+      description: Returns a list of all satellites
+      operationId: getSatellites
+      parameters:
+        - name: "satellitesToRetrieve"
+          in: query
+          description: Number of satellites to retrieve
           required: true
+          schema:
+            type: integer
+            format: number
+      responses:
+        200:
+          description: A list of satellites
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Satellite"
-        responses:
-          200:
-            description: Satellite information updated successfully
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/Satellite"
-                example:
-                  id: 9
-                  name: "Asteroid Slingshotter"
+              example:
+                - id: 9
+                  name: "Asteroid Incinerator"
                   owner: Laser Industries
                   status: 1
-          400:
-            description: Failed to update satellite information
-          500:
-            description: Failed to update satellite information
+                - id: 10
+                  name: "CleaningBot 1009"
+                  owner: CL4PTRAP
+                  status: 0
+        400:
+          description: Failed to retrieve satellite list
+        500:
+          description: Failed to retrieve satellite list
 
-    /satellites/{id}:
-      get:
-        summary: Get a satellite by ID
-        description: Get a satellite with the specified ID
-        operationId: getSatelliteById
-        parameters:
-          - name: id
-            in: path
-            description: Satellite ID
-            required: True
+    put:
+      summary: Update a satellite
+      description: Update a satellite with the specified ID
+      operationId: updateSatellite
+      requestBody:
+        description: Updated satellite information
+        required: true
+        content:
+          application/json:
             schema:
-              type: integer
-              format: int64
-        responses:
-          200:
-            description: Satellite information retrieved successfully
-            content:
-              application/json:
-                schema:
-                  $ref: "#/components/schemas/Satellite"
-                example:
-                  id: 8
-                  name: "Asteroid Eradicator"
-                  owner: Laser Industries
-                  status: 1
-          400:
-            description: Failed to get satellite information
-          404:
-            description: Specified satellite not found
-          500:
-            description: Failed to get satellite information
-
-      delete:
-        summary: Delete a satellite
-        description: Delete a satellite with the specified ID
-        operationId: deleteSatelliteById
-        parameters:
-          - name: id
-            in: path
-            description: Satellite ID
-            required: True
-            schema:
-              type: integer
-              format: int64
-        responses:
-          200:
-            description: Satellite deleted successfully
-          400:
-            description: Failed to delete satellite
-          404:
-            description: Specified satellite not found
-          500:
-            description: Failed to delete satellite
-
-    /satellites/scheduleDecommission:
-      post:
-        summary: Schedule decommission for a satellite
-        description: Schedule a decommission for the satellite with the specified ID
-        operationId: scheduleDecommissionForSatellite
-        requestBody:
-          description: Time at which the satellite should be decommissioned
-          required: true
+              $ref: "#/components/schemas/Satellite"
+      responses:
+        200:
+          description: Satellite information updated successfully
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DecommissionSchedule"
-        responses:
-          200:
-            description: Satellite decommission scheduled successfully
-          400:
-            description: A problem occurred while attempting to schedule the satellite decommission.
-          500:
-            description: A problem occurred while attempting to schedule the satellite decommission.
+                $ref: "#/components/schemas/Satellite"
+              example:
+                id: 9
+                name: "Asteroid Slingshotter"
+                owner: Laser Industries
+                status: 1
+        400:
+          description: Failed to update satellite information
+        500:
+          description: Failed to update satellite information
 
-  components:
-    schemas:
-      Satellite:
-        type: object
-        properties:
-          id:
+  /satellites/{id}:
+    get:
+      summary: Get a satellite by ID
+      description: Get a satellite with the specified ID
+      operationId: getSatelliteById
+      parameters:
+        - name: id
+          in: path
+          description: Satellite ID
+          required: True
+          schema:
             type: integer
             format: int64
-          name:
-            type: string
-          owner:
-            type: string
-          status:
+      responses:
+        200:
+          description: Satellite information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Satellite"
+              example:
+                id: 8
+                name: "Asteroid Eradicator"
+                owner: Laser Industries
+                status: 1
+        400:
+          description: Failed to get satellite information
+        404:
+          description: Specified satellite not found
+        500:
+          description: Failed to get satellite information
+
+    delete:
+      summary: Delete a satellite
+      description: Delete a satellite with the specified ID
+      operationId: deleteSatelliteById
+      parameters:
+        - name: id
+          in: path
+          description: Satellite ID
+          required: True
+          schema:
             type: integer
             format: int64
-        required:
-          - id
-          - name
-          - owner
-          - status
-      DecommissionSchedule:
-        type: object
-        properties:
-          satelliteId:
-            type: integer
-            format: int64
-          decommissionAt:
-            type: string
-        required:
-          - id
-          - decommissionAt
+      responses:
+        200:
+          description: Satellite deleted successfully
+        400:
+          description: Failed to delete satellite
+        404:
+          description: Specified satellite not found
+        500:
+          description: Failed to delete satellite
+
+  /satellites/scheduleDecommission:
+    post:
+      summary: Schedule decommission for a satellite
+      description: Schedule a decommission for the satellite with the specified ID
+      operationId: scheduleDecommissionForSatellite
+      requestBody:
+        description: Time at which the satellite should be decommissioned
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DecommissionSchedule"
+      responses:
+        200:
+          description: Satellite decommission scheduled successfully
+        400:
+          description: A problem occurred while attempting to schedule the satellite decommission.
+        500:
+          description: A problem occurred while attempting to schedule the satellite decommission.
+
+components:
+  schemas:
+    Satellite:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        owner:
+          type: string
+        status:
+          type: integer
+          format: int64
+      required:
+        - id
+        - name
+        - owner
+        - status
+    DecommissionSchedule:
+      type: object
+      properties:
+        satelliteId:
+          type: integer
+          format: int64
+        decommissionAt:
+          type: string
+      required:
+        - id
+        - decommissionAt
