@@ -9,9 +9,6 @@
  Create as many sidebars as you want.
  */
 
-// @ts-check
-import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-
 const sidebars = {
   ORC: [
     {

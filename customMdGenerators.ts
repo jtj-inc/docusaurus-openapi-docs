@@ -10,6 +10,7 @@ import { createRequestHeader } from "docusaurus-plugin-openapi-docs/lib/markdown
 import { createStatusCodes } from "docusaurus-plugin-openapi-docs/lib/markdown/createStatusCodes";
 import { createVendorExtensions } from "docusaurus-plugin-openapi-docs/lib/markdown/createVendorExtensions";
 import { render } from "docusaurus-plugin-openapi-docs/lib/markdown/utils";
+import { ApiPageMetadata } from "docusaurus-plugin-openapi-docs/lib/types";
 
 function createServersTable(servers: any[]) {
   if (servers.length) {
