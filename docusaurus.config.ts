@@ -236,14 +236,14 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           ORC: {
-            specPath: "./examples/ORC.yaml",
-            outputDir: "docs", // No trailing slash
+            specPath: "./examples/ORC.yaml", // Ensure this file exists
+            outputDir: "docs", // Ensure this directory exists
             sidebarOptions: {
               categoryLinkSource: "auto",
             },
-            version: "4.0.0", // Current version
-            label: "v4.0.0", // Current version label
-            baseUrl: "/", // Leading slash is important
+            version: "4.0.0",
+            label: "v4.0.0",
+            baseUrl: "/",
           },
         },
       },
