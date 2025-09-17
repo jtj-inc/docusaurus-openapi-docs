@@ -3,7 +3,7 @@ name: Deploy Live
 on:
   push:
     branches: [main]
-  workflow_dispatch:  # 👈 allows manual trigger
+  workflow_dispatch:
     inputs:
       branch:
         description: "Branch to deploy"
@@ -46,7 +46,7 @@ jobs:
       - name: Build site
         run: yarn build-demo && zip -r build.zip demo/build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4   # ✅ updated
         with:
           name: build
           path: build.zip
@@ -66,7 +66,7 @@ jobs:
           ref: ${{ github.event.inputs.branch || 'main' }}
 
       - name: Download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4   # ✅ updated
         with:
           name: build
 
